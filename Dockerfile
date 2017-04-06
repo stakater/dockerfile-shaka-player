@@ -13,10 +13,9 @@ RUN 					apt-get -y update
 
 
 # install NodeJs
-RUN 					curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
-RUN 					apt-get update
-RUN 					apt-get -y install nodejs
-
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+	apt-get update && apt-get install -y nodejs && \
+	npm install npm@latest -g
 
 # update npm to the latest version
 RUN 					npm update -g npm
